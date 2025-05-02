@@ -1,0 +1,623 @@
+body {
+    background-color: #121212;
+    color: #d0d0d0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    scroll-behavior: smooth;
+
+}
+.navbar {
+    background-color: rgba(1, 2, 17, 0.76);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.1);
+}
+
+/* Efecto al hacer scroll */
+.navbar.scrolled {
+    background-color: rgba(10, 10, 20, 0.9);
+    box-shadow: 0 4px 20px rgba(0, 188, 212, 0.3);
+}
+
+/* Estilos de los enlaces */
+.navbar-brand, .navbar-nav .nav-link {
+    color: #00bcd4; /* Azul cian futurista */
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Efecto Hover en los links */
+.navbar-nav .nav-link:hover {
+    color: #b388ff; /* Morado neón */
+    text-shadow: 0 0 10px rgba(179, 136, 255, 0.8);
+}
+
+/* Subrayado animado */
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: #b388ff; /* Morado neón */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Cambio de color al hacer scroll */
+.navbar.scrolled .navbar-brand, .navbar.scrolled .nav-link {
+    color: #ffffff;
+}
+
+#inicio {
+    background-image: url('../assets/img/4k\ Halo\ Wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#inicio h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #14ff00;
+    font-size: 4rem;
+    text-shadow: 0 0 20px rgba(20, 255, 0, 0.8), 0 0 40px rgba(20, 255, 0, 0.6);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+    position: relative;
+}
+
+#inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(0, 0, 0, 0.1) 0px, 
+        rgba(0, 0, 0, 0.1) 1px, 
+        transparent 2px, 
+        transparent 4px
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(20, 255, 0, 0.8), 0 0 40px rgba(20, 255, 0, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(20, 255, 0, 1), 0 0 50px rgba(20, 255, 0, 0.9);
+    }
+}
+
+.lead {
+    font-family: 'Orbitron', sans-serif;
+    color:  rgb(255, 255, 255);
+    font-size: 1.5rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    letter-spacing: 1px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 25px rgba(0, 255, 255, 1); }
+    100% { opacity: 0.8; }
+}
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 20px rgba(167, 255, 235, 0.8), 0 0 40px rgba(167, 255, 235, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(167, 255, 235, 1), 0 0 60px rgba(167, 255, 235, 0.8);
+    }
+}
+
+.btn-outline-info {
+    border-color: #14ff00;
+    color: #14ff00;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-info::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(20, 255, 0, 0.6) 10%, transparent 80%);
+    transition: left 0.4s ease-in-out;
+}
+
+.btn-outline-info:hover::before {
+    left: 100%;
+}
+
+#sobre-mi img {
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sobre-mi img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+.social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons a i {
+    color: #14ff00;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a:hover i {
+    color: #00ffcc;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+}
+.social2-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social2-icons a i {
+    color: #00ffcc;
+
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.social2-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social2-icons a:hover i {
+    color: #14ff00;
+
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.8);
+}
+/* Sección Sobre Mí */
+/* Sección Sobre Mí */
+#sobre-mi {
+    background: linear-gradient(135deg, #0c0f1a 0%, #05030d 100%); /* Azul oscuro con tonos morados */
+    color: #a277ff; /* Lila brillante */
+
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+    text-shadow: 0 0 10px rgba(162, 119, 255, 0.8);
+    box-shadow: 0 0 20px rgba(162, 119, 255, 0.2);
+
+}
+
+/* Sección Habilidades */
+#habilidades {
+    background: linear-gradient(135deg, #06101d 0%, #010409 100%); /* Azul oscuro estilo Halo */
+    color: #00bcd4; /* Azul cian futurista */
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+  
+}
+
+/* Sección Proyectos */
+#proyectos {
+    background: linear-gradient(135deg, #07121e 0%, #02050a 100%); /* Azul oscuro con reflejos metálicos */
+    color: #00e1ff; /* Azul eléctrico */
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 225, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.2);
+}
+
+
+
+/* Sección Contacto */
+#contacto {
+    background: linear-gradient(135deg, #0a0415 0%, #02010b 100%);
+    color: #00bcd4;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.contact-form .form-label {
+    color: #00bcd4;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.7);
+}
+
+.contact-form .form-control {
+    background: transparent;
+    border: 2px solid #00bcd4;
+    color: #00bcd4;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.contact-form .form-control:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+.btn-enviar {
+    background: linear-gradient(135deg, #00bcd4, #008ba3);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(135deg, #00ffff, #00bcd4);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+}
+
+
+/* Tarjetas (Cards) */
+.card {
+    background-color: rgba(15, 20, 30, 0.9); /* Azul oscuro transparente */
+    border: 1px solid #00bcd4; /* Borde azul cian */
+    color: #d0d0d0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.6);
+}
+
+
+
+footer {
+    background-color: #000000; /* Negro puro */
+    color: #00bcd4; /* Azul cian futurista */
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem; /* Tamaño más pequeño */
+    font-family: 'Orbitron', sans-serif; /* Tipografía futurista */
+    text-shadow: 0 0 5px rgba(0, 188, 212, 0.8);
+    border-top: 2px solid rgba(0, 188, 212, 0.5); /* Borde superior en neón */
+    box-shadow: 0 -5px 15px rgba(0, 188, 212, 0.1);
+}
+
+
+#sobre-mi, #habilidades, #proyectos {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#cursos {
+    background-color: #0a0f18;
+    color: #d0d0d0;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#cursos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.15) 10%, transparent 70%);
+    pointer-events: none;
+}
+
+#cursos h2 {
+    color: #64ffda;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.8);
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 25px rgba(100, 255, 218, 1); }
+    100% { opacity: 0.8; }
+}
+
+#cursos-slider {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-item {
+    padding: 2rem 0;
+    transition: transform 0.6s ease-in-out;
+}
+
+.curso-card {
+    background-color: rgba(10, 15, 24, 0.9);
+    border: 2px solid rgba(100, 255, 218, 0.5);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.curso-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+}
+
+.curso-card h3 {
+    color: #64ffda;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(100, 255, 218, 0.8);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(10, 15, 24, 0.8);
+    border: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 5%;
+    margin: 0 -5rem; /* Adds spacing between the arrows */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2rem;
+    height: 2rem;
+    filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.8));
+}
+
+@keyframes scanline {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.2; }
+}
+.success-message {
+    margin-top: 10px;
+    padding: 10px;
+    background: linear-gradient(135deg, #00bcd4, #008ba3);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+    animation: fadeIn 0.5s ease-in-out;
+}
+/* Contenedor principal */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px; /* Ajusta el tamaño máximo */
+    height: 250px; /* Altura fija */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pista de imágenes */
+.slider-track {
+    display: flex;
+    width: 300%; /* Se ajusta al número de imágenes */
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+/* Estilos de cada slide */
+.slide2 {
+    flex: 0 0 33.33%; /* Ajustado para que funcione bien el desplazamiento */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste de imágenes */
+.slide2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Muestra la imagen completa sin recortar */
+    border-radius: 10px;
+}
+
+/* Botones de control estilo Halo */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    background-color: transparent;
+    color: #0ff; /* Azul neón */
+    border: 1px solid rgba(0, 255, 150, 0.9);
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    z-index: 10;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 0px rgba(0, 255, 150, 0.8), 0px 0px 20px rgba(0, 150, 255, 0.6);
+    text-shadow: 0px 0px 5px rgba(0, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+/* Efecto de brillo en hover */
+.slider-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 200, 1), rgba(0, 200, 255, 1));
+    color: white;
+    border-color: rgba(0, 255, 255, 1);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 1), 0px 0px 25px rgba(0, 150, 255, 1);
+    transform: scale(1.0.2) rotate(2deg);
+}
+
+/* Botón de retroceso */
+.prev-btn {
+    left: 10px;
+}
+
+/* Botón de siguiente */
+.next-btn {
+    right: 10px;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#cursos::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        rgba(100, 255, 218, 0.05) 0px,
+        rgba(100, 255, 218, 0.05) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events: none;
+    animation: scanline 5s infinite linear;
+}
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 1rem); /* Muestra 2 elementos */
+    }
+}
+
+/* Para pantallas pequeñas: muestra 1 elemento */
+@media (max-width: 576px) {
+    .carousel-item {
+        flex: 0 0 100%; /* Muestra 1 elemento */
+        margin-right: 0; /* Elimina el margen entre elementos */
+
+    }
+
+    /* Asegura que el contenedor del carrusel mantenga una altura fija */
+    .carousel-inner {
+        display: flex;
+        align-items: center; /* Centra los elementos verticalmente */
+        min-height: 250px; /* Ajusta esta altura según el contenido */
+    }
+
+    /* Suaviza la transición para evitar saltos */
+    .carousel-item {
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    /* Evita que los elementos parezcan salir desde abajo */
+    .carousel-item.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: flex; /* Asegura que los botones se muestren */
+        align-items: center;
+        justify-content: center;
+        opacity: 1; /* Asegura que sean visibles */
+        width: 40px; /* Ajusta el tamaño si es necesario */
+        height: 40px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px; /* Ajusta el tamaño del ícono */
+        height: 20px;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); /* Agrega un efecto de sombra */
+    }
+
+    .carousel-control-prev {
+        left: 10px; /* Ajusta la posición del botón izquierdo */
+    }
+
+    .carousel-control-next {
+        right: 10px; /* Ajusta la posición del botón derecho */
+    }
+}
